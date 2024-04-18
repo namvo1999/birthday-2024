@@ -8,13 +8,14 @@ document.getElementById("wrapper").addEventListener("click", function() {
     
     if(step == 3){
         content.classList.add("clicked");
+        content.style.top = '475px';
         content2.style.top = '900px';
     }
 
     if(step == 2){
         content2.classList.add("clicked");
         content2.style.top = '475px';
-        content.style.top = '475px';
+        content.style.top = defaultContentTop;
     }
 
     if(step == 4) {
