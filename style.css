@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background-color: #384049;
+}
+
+.wrapper {
+  height: 500px;
+  width: 800px;
+  background-color: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.evelope {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.lid {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-bottom: 100px solid transparent;
+  border-right: 400px solid transparent;
+  border-left: 400px solid transparent;
+  transform-origin: top;
+  transition: transform 0.25s linear;
+}
+
+.bottom-lid {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  border-bottom: 600px solid #eed9c4;
+  transform-origin: bottom;
+  transition: transform 0.25s linear;
+}
+
+.lid.one {
+  border-top: 300px solid #f5f5dc;
+  transform: rotateX(0deg);
+  transition-delay: 0.75s;
+  z-index: 2;
+}
+
+.lid.two {
+  border-top: 300px solid white;
+  transform: rotateX(90deg);
+  transition-delay: 0.5s;
+}
+
+.bottom-lid.one {
+  border-bottom: 500px solid #eed9c4;
+  transform: rotateX(0deg);
+  transition-delay: 0.75s;
+  z-index: 1;
+}
+
+.bottom-lid.two {
+  border-bottom: 500px solid white;
+  transform: rotateX(90deg);
+  transition-delay: 0.5s;
+
+}
+
+.wrapper.clicked .lid.one {
+  transform: rotateX(90deg);
+  transition-delay: 0s;
+}.wrapper.clicked .lid.two {
+  transform: rotateX(180deg);
+  transition-delay: 0.25s;
+}
+
+.wrapper.clicked .bottom-lid.one {
+  transform: rotateX(90deg);
+  transition-delay: 0.5s;
+}
+.wrapper.clicked .bottom-lid.two {
+  transform: rotateX(180deg);
+  transition-delay: 0.75s;
+}
+
+.letter {
+  top: 0;
+  width: 90%;
+  height: 90%;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* 
+.letter p {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 30px;
+  color: #3b4049;
+} */
+
+.letter .content {
+  width: 90%;
+  height: 90%;
+  background-color: antiquewhite;
+  position: absolute;
+  top: 25px;
+  transition: top 0.5s ease; /* Smooth transition for the 'top' property */
+}
+
+.letter .content-2 {
+  width: 90%;
+  height: 90%;
+  background-color: lightblue;
+  position: absolute;
+  top: 25px;
+  transition: top 0.5s ease; /* Smooth transition for the 'top' property */
+}
+
+/* .content.clicked{
+  top: 475px;
+}
+
+.content-2.clicked{
+  top: 900px;
+} */
