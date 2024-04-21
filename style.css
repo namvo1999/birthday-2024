@@ -1,22 +1,32 @@
+@font-face {
+  font-family: 'YourFontName';
+  src: url('./dpdorkdiary-font/Dpdorkdiary-P267.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+.flex{
+  display:flex;
+}
 body {
   height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: sans-serif;
+  font-family: 'YourFontName', sans-serif; /* Use Dpdorkdiary-P267 as the primary font family */
   background-color: #384049;
 }
 
 .wrapper {
-  height: 500px;
-  width: 800px;
+  height: 300px;
+  width: 500px;
   background-color: white;
   position: relative;
   display: flex;
@@ -40,8 +50,8 @@ body {
   top: 0;
   left: 0;
   border-bottom: 100px solid transparent;
-  border-right: 400px solid transparent;
-  border-left: 400px solid transparent;
+  border-right: 250px solid transparent;
+  border-left: 250px solid transparent;
   transform-origin: top;
   transition: transform 0.25s linear;
 }
@@ -53,33 +63,33 @@ body {
   top: 0;
   left: 0;
 
-  border-bottom: 600px solid #eed9c4;
+  border-bottom: 300px solid #eed9c4;
   transform-origin: bottom;
   transition: transform 0.25s linear;
 }
 
 .lid.one {
-  border-top: 300px solid #f5f5dc;
+  border-top: 200px solid #f5f5dc;
   transform: rotateX(0deg);
   transition-delay: 0.75s;
   z-index: 2;
 }
 
 .lid.two {
-  border-top: 300px solid white;
+  border-top: 200px solid white;
   transform: rotateX(90deg);
   transition-delay: 0.5s;
 }
 
 .bottom-lid.one {
-  border-bottom: 500px solid #eed9c4;
+  border-bottom: 300px solid #eed9c4;
   transform: rotateX(0deg);
   transition-delay: 0.75s;
   z-index: 1;
 }
 
 .bottom-lid.two {
-  border-bottom: 500px solid white;
+  border-bottom: 300px solid white;
   transform: rotateX(90deg);
   transition-delay: 0.5s;
 
@@ -123,32 +133,31 @@ body {
   height: 90%;
   background-color: white;
   position: absolute;
-  top: 25px;
-  transition: top 0.5s ease;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding: 10px;
+  top: 0px;
+  transition: top 0.5s ease
+  , transform 0.5s ease;
+  padding: 5px;
 }
 
-.letter .content-2 {
-  width: 90%;
-  height: 90%;
-  background-color: white;
-  position: absolute;
-  top: 25px;
-  transition: top 0.5s ease; /* Smooth transition for the 'top' property */
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding: 10px;
-}
-
-.content .body{
-  background-color: antiquewhite;
+.content-1 .body{
+  background-color: beige;
   width: 100%;
   height: 100%;
+  box-shadow: 0 0 40px rgba(0,0,0,0.07);
+
 }
 .content-2 .body{
-  background-color: lightblue;
+  background-color: lightpink;
   width: 100%;
   height: 100%;
+  box-shadow: 0 0 40px rgba(0,0,0,0.07);
+}
+
+.content-3 .body{
+  background-color: beige;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 40px rgba(0,0,0,0.07);
 }
 
 /* .content.clicked{
@@ -158,3 +167,61 @@ body {
 .content-2.clicked{
   top: 900px;
 } */
+
+
+.page-2{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center ;
+  padding: 10px;
+  font-size: 50px;
+}
+
+.page-2 .letter-line {
+  justify-content: center; 
+  width: 100%;
+  align-items: center;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.heart {
+  animation: doki 0.1s infinite;
+}
+
+.sun {
+  box-shadow: 0 0 40px rgba(243, 227, 5, 0.07);
+}
+
+@keyframes doki {
+  0% {width: 60px;}
+  50% {width: 64px;}
+  100% {width: 68px;}
+}
+
+.second-letter{
+  cursor: pointer;
+  justify-content: center;
+}
+
+.third-letter{
+  justify-content: end;
+  width: 100%;
+  align-items: center;
+
+}
+
+.hp-1{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
