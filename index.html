@@ -3,59 +3,110 @@
   <head>
     <meta charset="UTF-8" />
     <title>Cat login</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style2.css" />
   </head>
   <body>
-    <div class="wrapper" id="wrapper">
-        <div class="lid one"></div>
-        <div class="lid two"></div>
-        <div class="evelope"></div>
-        <div class="bottom-lid one"></div>
-        <div class="bottom-lid two"></div>
-        <div class="letter">
-            <div class="content content-1" id="content-1">
-              <div class="body">
-               
-              </div>
-            </div>
-            <div class="content content-2" id="content-2">
-              <div class="body">
-                <div class="page-2">
-                  <div class="flex letter-line">
-                    <label>You hit right in</label>
-                  </div>   
-                  <div class="flex letter-line" id="second-letter">
-                    <label>the heart </label>
-                  </div>               
-                  <div class="flex letter-line">
-                    <img class="icon heart" src="./assets/heart_1469576.png" alt="">
-                  </div>                
+    <div class="full-wrapper" id="full-wrapper">
+        <div class="page-left opened" id="page-left-opened">
+            <div class="picture-container">
+                <div class="picture">
+                    <div class="picture-content">
+                        
+                    </div>
+
+                    <div class="picture-icon">
+                        <div class="cake"><img src="./assets/cake_4841225.png" alt=""></div>
+                        <div class="cake"><img src="./assets/cake_4841225.png" alt=""></div>
+                        <div class="cake"><img src="./assets/cake_4841225.png" alt=""></div>
+                        <div class="cake"><img src="./assets/cake_4841225.png" alt=""></div>
+                        <div class="cake"><img src="./assets/cake_4841225.png" alt=""></div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="content content-3" id="content-3">
-              <div class="body">
-                <div class="page-2">
-                  <div class="flex letter-line">
-                    <label>You are my</label>
-                    <img class="icon " src="./assets/826904.png" alt="">,
-                  </div>   
-                  <div class="flex letter-line" id="second-letter">
-                    <label>My </label>
-                    <img class="icon" src="./assets/moon_9486907.png" alt="">
-                    <label>And all</label>
-                  </div>               
-                  <div class="flex letter-line">
-                    <label>my star</label>
-                    <img class="icon" src="./assets/stars_6024579.png" alt="">
-                    <label>(>3<)</label>
-                  </div>                
+            </div>           
+            <div class="audio">
+                <div class="media">
+                    <div class="player">
+                        <img src="./assets/disk.png" alt="" class="disk" id="disk">
+                    </div>
+                    <div class="control">
+                        <div class="bar">
+                            <audio controls id="song" class="d-none">
+                                <source src="./assets/abouttime.mp3" type="audio/mpeg">
+                            </audio>
+                            <input type="range" value="0" id="progress"/>
+                            <div class="controls">
+                                <div id="play-con" onclick="playPause()"><img src="./assets/play.png" alt="" class="play-icon" id="ctlIcon"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
         </div>
+        <!-- <div class="page-left closed" id="page-left-closed"></div> -->
+        <div class="page-right">
+            <div class="content">
+                <div class="letter">
+                    <div class="wrapper" id="wrapper">
+                        <div class="lid one"></div>
+                        <div class="lid two"></div>
+                        <div class="evelope"></div>
+                        <div class="bottom-lid one"></div>
+                        <div class="bottom-lid two"></div>
+                        <div class="letter">
+                            <div class="content content-1" id="content-1">
+                              <div class="body page-3">
+                                <label class="the-best">You > all the rest</label>
+                              </div>
+                            </div>
+                            <div class="content content-2" id="content-2">
+                              <div class="body">
+                                <div class="page-2">
+                                  <div class="flex letter-line">
+                                    <label>You hit right in</label>
+                                  </div>   
+                                  <div class="flex letter-line" id="second-letter">
+                                    <label>the heart </label>
+                                  </div>               
+                                  <div class="flex letter-line">
+                                    <img class="icon heart" src="./assets/heart_1469576.png" alt="">
+                                  </div>                
+                                </div>
+                              </div>
+                            </div>
+                            <div class="content content-3" id="content-3">
+                              <div class="body">
+                                <div class="page-2">
+                                  <div class="flex letter-line">
+                                    <label>You are my</label>
+                                    <img class="icon " src="./assets/826904.png" alt="">,
+                                  </div>   
+                                  <div class="flex letter-line" id="second-letter">
+                                    <label>My </label>
+                                    <img class="icon" src="./assets/moon_9486907.png" alt="">
+                                    <label>And all</label>
+                                  </div>               
+                                  <div class="flex letter-line">
+                                    <label>my star</label>
+                                    <img class="icon" src="./assets/stars_6024579.png" alt="">
+                                    <label>(>3<)</label>
+                                  </div>                
+                                </div>
+                              </div>
+                            </div>                           
+                            <div class="content content-4" id="content-4">
+                              <div class="body">
+                                <div class="page-2">
+                                  The level of your beauty
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>          
+        </div>
     </div>
-
     <script src="script.js"></script>
+    <script src="script2.js"></script>
   </body>
 </html>

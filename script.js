@@ -1,10 +1,9 @@
 let step = 0;
 let contentStep = 0;
-let numbContent = 3;
-const defaultContentTop = 25;
+let numbContent = 4;
+const defaultContentTop = 10;
 
 let emotionalStep = 0;
-let emotionals = ["Buồn 😞", "vui 😊", "tìm người nói chuyện 🙄"]
 let currentTop = defaultContentTop;
 let emotionalText = document.getElementById("emotional");
 
@@ -25,34 +24,20 @@ document.getElementById("wrapper").addEventListener("click", function () {
   this.classList.add("clicked");
   step += 1;
 
-  //   if (step == 3) {
-  //     content.classList.add("clicked");
-  //     content.style.top = "475px";
-  //     content2.style.top = "925px";
-  //     content.style.transform = "";
-  //   }
-
-  //   if (step == 2) {
-  //     content2.classList.add("clicked");
-  //     content2.style.top = "480px";
-  //     content.style.top = defaultContentTop;
-  //     content2.style.transform = "";
-  //   }
-
   if (step > 1) {
     contentStep += 1;
-    let top = contentStep * 270;
+    let top = contentStep * 180;
     for (var i = numbContent; i >= 1; i--) {
       var content = document.getElementById(`content-${i}`);
       content.style.top = top + "px";
-      top -= 270;
+      top -= 170;
       if (top <= 0) {
         top = defaultContentTop;
       }
     }
   } 
 
-  if (step == 4) {
+  if (step == numbContent + 1) {
     this.classList.remove("clicked");
     resizeTo();
   }
