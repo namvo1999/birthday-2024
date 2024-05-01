@@ -1,7 +1,7 @@
 const nubmerOfCake = 5;
 let progress = document.getElementById("progress");
 let ctlIcon = document.getElementById("ctlIcon");
-let song = document.getElementById("song");
+let song = document.getElementById("thao-video");
 let disk = document.getElementById("disk");
 let isPlaying = false;
 document.getElementById("full-wrapper").addEventListener("click", function () {
@@ -38,12 +38,25 @@ progress.onchange = function() {
   song.play();
   song.currentTime = progress.value;
   ctlIcon.src = "./assets/pause.png";
-  let isPlaying = true;
+  isPlaying = true;
+  toggleCake();
 }
+
+song.addEventListener("ended", function() {
+  progress.value = 0;
+  song.currentTime = 0;
+  playPause();
+});
 
 function toggleCake(){
   for (let index = 1; index <= nubmerOfCake; index++) {
     const danceClass = index % 2 == 0 ? 'dance-1' : 'dance-2';
-    document.getElementById("cake-" + index).classList.toggle(danceClass);    
+    const cake = document.getElementById("cake-" + index).classList;
+    if(isPlaying){
+      cake.add(danceClass);
+    }
+    else{
+      cake.remove(danceClass);
+    }
   }
 }
