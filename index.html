@@ -14,6 +14,7 @@
                       <video id="thao-video">
                         <source src="./assets/thao-pic/0430 (1).mp4" type="video/mp4">
                       </video>
+                      <img src="./assets/lily.jpg" alt="" id="lily">
                     </div>
 
                     <div class="picture-icon">
@@ -31,20 +32,18 @@
                         <img src="./assets/disk.png" alt="" class="disk" id="disk">
                     </div>
                     <div class="control">
-                        <div class="bar">
-                            <audio controls id="song" class="d-none">
-                                <source src="./assets/abouttime.mp3" type="audio/mpeg">
-                            </audio>
+                        <div class="bar">                        
                             <input type="range" value="0" id="progress"/>
                             <div class="controls">
+                                <div onclick="playNextAndBack(false)"><img src="./assets/back.png" alt="" class="back-icon"></div>
                                 <div id="play-con" onclick="playPause()"><img src="./assets/play.png" alt="" class="play-icon" id="ctlIcon"></div>
+                                <div onclick="playNextAndBack(true)"><img src="./assets/next.png" alt="" class="next-icon"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="page-left closed" id="page-left-closed"></div>
         <div class="page-right">
             <div class="content">
                 <div class="dear">
@@ -60,53 +59,101 @@
                         <div class="bottom-lid one"></div>
                         <div class="bottom-lid two"></div>
                         <div class="letter">
-                            <div class="content content-1" id="content-1">
-                              <div class="body page-tresure">
-                                <label class="the-best">Every moment</label>
-                                <label class="the-best">with you is</label>
-                                <img class="icon" src="./assets/treasure.png" alt="">
-
-                              </div>
+                          <div class="content content-1" id="content-1">
+                            <div class="body page-tresure">
+                              <label>Hẹn ngày được gặp cậu</label>
+                              <label class="the-best"></label>
                             </div>
-                            <div class="content content-2" id="content-2">
-                              <div class="body">
-                                <div class="page-2">
-                                  <div class="flex letter-line">
-                                    <label>You hit right in</label>
-                                  </div>   
-                                  <div class="flex letter-line" id="second-letter">
-                                    <label>the heart </label>
-                                  </div>               
-                                  <div class="flex letter-line">
-                                    <img class="icon heart" src="./assets/heart_1469576.png" alt="">
-                                  </div>                
-                                </div>
-                              </div>
+                          </div>
+                          <div class="content content-2" id="content-2">
+                            <div class="body page-tresure">
+                              <label>Chúc mừng sinh nhật</label>
+                              <label>cậu nhá</label>
                             </div>
+                          </div>
                             <div class="content content-3" id="content-3">
-                              <div class="body">
-                                <div class="page-2">
-                                  <div class="flex letter-line">
-                                    <label>You are my</label>
-                                    <img class="icon " src="./assets/826904.png" alt="">,
-                                  </div>   
-                                  <div class="flex letter-line" id="second-letter">
-                                    <label>My </label>
-                                    <img class="icon" src="./assets/moon_9486907.png" alt="">
-                                    <label>And all</label>
-                                  </div>               
-                                  <div class="flex letter-line">
-                                    <label>my star</label>
-                                    <img class="icon" src="./assets/stars_6024579.png" alt="">
-                                    <label>(>3<)</label>
-                                  </div>                
-                                </div>
+                              <div class="body page-tresure">
+                                <label class="the-best">Tớ biết mòa</label>
+                                <label class="the-best">Tớ cũng vui lắm</label>
+                                <label class="the-best"></label>
                               </div>
-                            </div>                           
+                            </div>
                             <div class="content content-4" id="content-4">
                               <div class="body">
+                                <div class="page-2">
+                                  <div class="flex letter-line">
+                                    <label>Cậu đang cảm thấy </label>
+                                  </div>   
+                                  <div class="flex letter-line" id="second-letter">
+                                    <label>vô cùng may mắn,... </label>
+                                  </div>               
+                                  <div class="flex letter-line">
+                                    <label>vì được làm bạn tớ</label>
+                                  </div>                
+                                </div>
+                              </div>
+                            </div>
+                            <div class="content content-5" id="content-5">
+                              <div class="body">
+                                <div class="page-2">
+                                  <div class="flex letter-line">
+                                    <label>Thui hum phải ngại</label>
+                                  </div>   
+                                  <label>Tớ biết thừa rồi</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="content content-6" id="content-6">                            
+                              <div class="body">
+                                <div class="page-2">
+                                  <div class="page-text">
+                                    <img src="./assets/bouquet_9508642.png" alt="" style="height: 130px; width: 150px;" id="play-star">
+                                  </div>                
+                                </div>
+                              </div>
+                            </div>
+                            <div class="content content-7" id="content-7">
+                              <div class="body">
                                 <div class="page-text">
-                                  Distance means so little when someone means so much
+                                  <label>Bó hoa xinh này</label>
+                                  <label>Để khen ngợi những</label>
+                                  <label>Nổ lực của cậu nè</label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="content content-8" id="content-8">
+                              <div class="body">
+                                <div class="page-text">
+                                  <label>Oh my god</label>
+                                  <label>What is that</label>
+                                </div>
+                              </div>
+                            </div>      
+                            <div class="content content-9" id="content-9">
+                              <div class="body">
+                                <div class="page-text">
+                                  <label>Đầu tiên phải rạng ngời như kim cương nhá</label>
+                                  <img class="icon" src="./assets/diamond.png" alt="">                               
+                                </div>
+                              </div>
+                            </div>
+                            <div class="content content-10" id="content-10">
+                              <div class="body">
+                                <div class="page-text">
+                                  <label>Chuẩn bị tinh thần đi</label>
+                                  <label>he he</label>
+                                  <img class="icon" src="./assets/ahihi.png" alt="">                               
+                                </div>
+                              </div>
+                            </div>
+                            <div class="content content-11" id="content-11">
+                              <div class="body">
+                                <div class="page-text">
+                                  Đoán xem hôm nay
+                                  <br/>
+                                  tớ có gì cho cậu này
+                                  <br/>
+                                  <img class="icon" src="./assets/smileface.png" alt="">                               
                                 </div>
                               </div>
                             </div>
