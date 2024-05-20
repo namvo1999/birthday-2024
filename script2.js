@@ -7,7 +7,7 @@ let lily = document.getElementById("lily");
 let playStar = document.getElementById("play-star");
 let step = 0;
 let contentStep = 0;
-let numbContent = 11;
+let numbContent = 10;
 let currentVideo = 0;
 const defaultContentTop = 10;
 
@@ -16,11 +16,18 @@ let currentTop = defaultContentTop;
 let emotionalText = document.getElementById("emotional");
 let isPlaying = false;
 let videos = [
-  'diamond',
-  '0430 (1)',
-  '0518 (1)',
-  'hpbd',
+  'toteti.mp3',
+  'emoicuvui.mp3',
+  'tiptoe.mp3',
+  'shoti.mp3',
+  'raider.mp3',
+  'kismemore.mp3',
+  'amee.mp3',
+  'kissingontattoo.mp3',
+  'onelastime.mp3',
+  'abouttime.mp3',
 ]
+
 document.getElementById("full-wrapper").addEventListener("click", function () {
   this.classList.add("clicked");
 });
@@ -33,7 +40,7 @@ song.onloadedmetadata = function() {
 function playPause(step = -1) {
   if(step != -1){
     isPlaying = false;
-  }
+  }  
 
   if(isPlaying){
     song.pause();
@@ -53,9 +60,9 @@ function playNextAndBack(isPlayNext) {
   }
   if(currentVideo < 0){
     currentVideo = videos.length - 1;
-  }
+  }  
 
-  song.src = `./assets/thao-pic/${videos[currentVideo]}.mp4`;
+  song.src = `./assets/thao-pic/${videos[currentVideo]}`;
   isPlaying = true;
   playPause(3);
 }
@@ -77,15 +84,28 @@ progress.onchange = function() {
 song.addEventListener("ended", function() {
   progress.value = 0;
   song.currentTime = 0;
-  playPause();
+  currentVideo++;
+  if(currentVideo > videos.length - 1){
+    currentVideo = 0;
+  }
+  song.src = `./assets/thao-pic/${videos[currentVideo]}`;
+
+  playPause(1);
 });
 
 function playMusic() {
   song.play();
   ctlIcon.src = "./assets/pause.png";
   disk.classList.add("play");
-  song.classList.add("play");
-  lily.classList.add("play");
+ 
+  if(song.src.includes('mp3')){
+    lily.classList.remove("play");
+    song.classList.remove("play");
+  }
+  else{
+    lily.classList.add("play");
+    song.classList.add("play");
+  }
 }
 
 function toggleCake(){
@@ -112,6 +132,7 @@ function initCardColor(){
   for (let index = 1; index <= numbContent; index++) {
     document.querySelector(`.content-${index} .body`).style.backgroundColor = index % 2 ? "beige" : "var(--mau-pink)"; 
   }
+  song.src = "./assets/thao-pic/toteti.mp3";
 }
 
 function resizeTo() {
@@ -151,19 +172,19 @@ document.getElementById("wrapper").addEventListener("click", function () {
       if(step === 4){
         song.src = './assets/thao-pic/hpbd.mp4';
         isPlaying = true;
-        playPause(5);
+        playPause(4);
       }
 
       if(step === 8){
         song.src = './assets/thao-pic/0518 (1).mp4';
         isPlaying = true;
-        playPause(5);
+        playPause(8);
       }
 
       if(step === 10){
         song.src = './assets/thao-pic/0430 (1).mp4';
         isPlaying = true;
-        playPause(5);
+        playPause(10);
       }
     }
   } 

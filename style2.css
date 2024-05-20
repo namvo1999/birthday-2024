@@ -55,7 +55,6 @@ body {
   height: 700px;
   position: absolute;
   transition: transform 2s linear;
-  left: 400px;
   z-index: 1;
   transform: rotateY(0deg);
   display: flex;
@@ -463,7 +462,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px
+  font-size: 40px;
+  flex-direction: column;
 }
 
 .page-text{
